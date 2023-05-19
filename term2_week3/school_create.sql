@@ -1,7 +1,10 @@
+PRAGMA foreign_keys = ON;
+
+DROP TABLE IF EXISTS Students_Classes;
+DROP TABLE IF EXISTS Classes;
 DROP TABLE IF EXISTS Teachers;
 DROP TABLE IF EXISTS Students;
-DROP TABLE IF EXISTS Classes;
-DROP TABLE IF EXISTS Students_Classes;
+
 
 CREATE TABLE Teachers (
     ID INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -23,7 +26,7 @@ CREATE TABLE Classes (
     Subject TEXT,
     Room TEXT,
     TeacherID INTEGER,
-    FOREIGN KEY (TeacherID) REFERENCES Teacher(ID)
+    FOREIGN KEY (TeacherID) REFERENCES Teachers(ID)
 );
 
 CREATE TABLE Students_Classes (
@@ -40,7 +43,7 @@ VALUES
 (null, 'Fred', 'Rails' , '55'),
 (null, 'Liam', 'O''Monkey', '72'),
 (null, 'Geoffry', 'Simons', '30'),
-(null, 'johnny', 'sins', '33');
+(null, 'johnny', 'calebs', '33');
 
 INSERT INTO Students 
 VALUES
@@ -61,12 +64,34 @@ VALUES
 (null, 'English', '230', 2),
 (null, 'Maths', 'R5', 3), 
 (null, 'History', 'E1', 4),
-(null, 'Geography', '49', 5),
-(null, 'I.T', '15', 3);
+(null, 'D.T.', '49', 5),
+(null, 'Science', '59', 1),
+(null, 'Art', '66', 5),
+(null, 'P.E.', '23', 1),
+(null, 'Geography', '33', 5),
+(null, 'FoodTec', '49', 1),
+(null, 'I.T.', '15', 3);
 
 INSERT INTO Students_Classes 
 VALUES
 (1, 1),
-(1, 2),
-(2, 1),
-(2, 2);
+(2, 8),
+(2, 2),
+(2, 7),
+(3, 9),
+(3, 1),
+(4, 3),
+(4, 8),
+(4, 2),
+(4, 9),
+(5, 8),
+(6, 1),
+(6, 10),
+(7, 9),
+(7, 5),
+(7, 1),
+(7, 2),
+(8, 6),
+(8, 1),
+(9, 3);
+
